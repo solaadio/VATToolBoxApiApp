@@ -160,7 +160,7 @@ namespace VATToolBoxApiApp.Controllers
             {
                 Message = "You are running an unsupported version of VAT Toolbox." +
                                             " Please download the latest version from the App Store to ensure that VAT Toolbox runs without problems ",
-                VersionId = 3.01
+                VersionId = 3.50
 
             };
             return allowed;
