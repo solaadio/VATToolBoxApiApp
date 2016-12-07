@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VATToolBoxApiApp", "VATToolBoxApiApp\VATToolBoxApiApp.csproj", "{5204073F-981F-490D-A9F6-FDFFCFE6CD59}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VATToolBoxApiApp.Models", "VATToolBoxApiApp.Models\VATToolBoxApiApp.Models.csproj", "{2469BB4C-C427-40E3-BF17-040FCDB4E22E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VATToolBoxApiApp.Repository", "VATToolBoxApiApp.Repository\VATToolBoxApiApp.Repository.csproj", "{18787BA7-6456-4A48-A5B9-BA81E995935C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{5204073F-981F-490D-A9F6-FDFFCFE6CD59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5204073F-981F-490D-A9F6-FDFFCFE6CD59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5204073F-981F-490D-A9F6-FDFFCFE6CD59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2469BB4C-C427-40E3-BF17-040FCDB4E22E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2469BB4C-C427-40E3-BF17-040FCDB4E22E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2469BB4C-C427-40E3-BF17-040FCDB4E22E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2469BB4C-C427-40E3-BF17-040FCDB4E22E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18787BA7-6456-4A48-A5B9-BA81E995935C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18787BA7-6456-4A48-A5B9-BA81E995935C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18787BA7-6456-4A48-A5B9-BA81E995935C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18787BA7-6456-4A48-A5B9-BA81E995935C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

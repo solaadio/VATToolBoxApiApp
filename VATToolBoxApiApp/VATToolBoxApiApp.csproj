@@ -58,6 +58,8 @@
       <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.0\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -98,6 +100,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <None Include="Service References\eu.europa.ec\configuration91.svcinfo" />
+    <None Include="Service References\eu.europa.ec\configuration.svcinfo" />
+    <None Include="Service References\eu.europa.ec\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Web.config" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
@@ -105,14 +113,29 @@
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\VATToolBoxController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\eu.europa.ec\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\VATToolBoxApiApp.pubxml" />
+    <None Include="Service References\eu.europa.ec\checkVatService.wsdl" />
+    <Content Include="Service References\eu.europa.ec\VATToolBoxApiApp.eu.europa.ec.checkVatApproxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\eu.europa.ec\VATToolBoxApiApp.eu.europa.ec.checkVatResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\eu.europa.ec\VATToolBoxApiApp.eu.europa.ec.matchCode.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -120,7 +143,22 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\VATToolBoxApiApp.Models\VATToolBoxApiApp.Models.csproj">
+      <Project>{2469bb4c-c427-40e3-bf17-040fcdb4e22e}</Project>
+      <Name>VATToolBoxApiApp.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VATToolBoxApiApp.Repository\VATToolBoxApiApp.Repository.csproj">
+      <Project>{18787ba7-6456-4a48-a5b9-ba81e995935c}</Project>
+      <Name>VATToolBoxApiApp.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\eu.europa.ec\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
