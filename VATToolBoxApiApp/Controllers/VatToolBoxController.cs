@@ -145,6 +145,7 @@ namespace VATToolBoxApiApp.Controllers
                                            Title = "What's new in V3.50",
                                            VersionId = "3.50"
                                        },
+
                                   new WhatsNewResultMore
                                        {
                                            Body =
