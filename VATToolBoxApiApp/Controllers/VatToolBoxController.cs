@@ -147,8 +147,7 @@ namespace VATToolBoxApiApp.Controllers
                                        },
                                   new WhatsNewResultMore
                                        {
-                                           Body =
-                                               "Minor UI tweaks.",
+                                           Body = "Minor UI tweaks.",
                                            ButtonTitle = "Ok",
                                            NotificationId = 1,
                                            Title = "What's new in V3.51",
