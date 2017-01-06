@@ -1,9 +1,5 @@
-﻿using System.Globalization;
-using System.Linq;
-using System.Web.Http;
-using System.Web.Http.Description;
+﻿using System.Web.Http;
 using Swashbuckle.Application;
-using Swashbuckle.Swagger;
 using WebActivatorEx;
 using VATToolBoxApiApp;
 
@@ -15,8 +11,6 @@ namespace VATToolBoxApiApp
     {
         public static void Register()
         {
-            var thisAssembly = typeof(SwaggerConfig).Assembly;
-
             GlobalConfiguration.Configuration
                 .EnableSwagger(c =>
                     {
@@ -245,12 +239,6 @@ namespace VATToolBoxApiApp
         }
     }
 
-    /// <summary>
-    /// If you would prefer to control the Swagger Operation ID
-    /// values globally, uncomment this class, as well as the 
-    /// call above that wires this Operation Filter into 
-    /// the pipeline.
-    /// </summary>
     /*
     internal class IncludeParameterNamesInOperationIdFilter : IOperationFilter
     {
