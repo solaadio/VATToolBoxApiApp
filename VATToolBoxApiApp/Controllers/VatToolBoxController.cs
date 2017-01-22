@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
+using MongoDB.Bson.Serialization;
 using Newtonsoft.Json;
 using VATToolBoxApiApp.Models;
 using VATToolBoxApiApp.Repository.Implementation;
@@ -16,6 +17,11 @@ namespace VATToolBoxApiApp.Controllers
     // ReSharper disable once InconsistentNaming
     public class VATToolBoxController : ApiController
     {
+        public VATToolBoxController()
+        {
+ 
+        }
+
         [HttpGet]
         [Route("CheckVatId/{countryCode}/{vatNumber}")]
         public ResponseObject ValidateVatId(string countryCode, string vatNumber)
@@ -55,7 +61,7 @@ namespace VATToolBoxApiApp.Controllers
         public RateVersion GetRatesVersion()
         {
             //            var rateVersion = new RateVersion { Version = 2.02, VersionDate = new DateTime(2013, 01, 12).ToString("yyyyMMdd"), Status = "OK" };
-            var rateVersion = new RateVersion { Version = 3.50, VersionDate = new DateTime(2016, 11, 01).ToString("yyyyMMdd") };
+            var rateVersion = new RateVersion { Version = 3.51, VersionDate = new DateTime(2017, 01, 22).ToString("yyyyMMdd") };
             // uncomment to shut this endpoint down
             //                var rateVersion = new RateVersion { Version = 2.06, VersionDate = new DateTime(2013, 01, 16).ToString("yyyyMMdd"), Status = "UPGRADE_NOW" };
             return rateVersion;
@@ -176,11 +182,11 @@ namespace VATToolBoxApiApp.Controllers
         }
 
         [Route("GetRates")]
-        public IEnumerable<CountryRates> GetRates()
+        public async Task<IEnumerable<CountryRates>> GetRates()
         {
-            IGetRatesRepository repo = new GetRatesRepository();
-            var rates = repo.GetReturnRates();
-            return rates;
+            IGetRatesRepository repo = new GetRatesFromMongoDbRepo();
+            var rates = await repo.GetReturnRates();
+            return  rates;
         }
 
         [Route("SendFeedback")]

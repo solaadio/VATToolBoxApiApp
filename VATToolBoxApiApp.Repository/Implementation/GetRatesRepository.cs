@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using VATToolBoxApiApp.Models;
 using VATToolBoxApiApp.Repository.Interfaces;
 
@@ -7,7 +8,7 @@ namespace VATToolBoxApiApp.Repository.Implementation
 {
     public class GetRatesRepository : IGetRatesRepository
     {
-        public List<CountryRates> GetReturnRates()
+        public async Task<List<CountryRates>> GetReturnRates()
         {
             // Eurpoe
             var atRates = new List<double> {0.0, 10.0, 12.0, 20.0};
@@ -1646,7 +1647,7 @@ namespace VATToolBoxApiApp.Repository.Implementation
             allRates.AddRange(restOfTheWorldRates);
             allRates.AddRange(canadaRates);
 
-            return allRates;
+            return await Task.FromResult(allRates);
         }
     }
 }
