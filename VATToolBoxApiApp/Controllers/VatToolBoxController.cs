@@ -158,6 +158,14 @@ namespace VATToolBoxApiApp.Controllers
                                            NotificationId = 1,
                                            Title = "What's new in V3.51",
                                            VersionId = "3.51"
+                                       },
+                                  new WhatsNewResultMore
+                                       {
+                                           Body = "Minor Release.",
+                                           ButtonTitle = "Ok",
+                                           NotificationId = 1,
+                                           Title = "What's new in V3.52",
+                                           VersionId = "3.52"
                                        }
 
 
