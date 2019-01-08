@@ -5,7 +5,6 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
-using MongoDB.Bson.Serialization;
 using Newtonsoft.Json;
 using VATToolBoxApiApp.Models;
 using VATToolBoxApiApp.Repository.Implementation;
