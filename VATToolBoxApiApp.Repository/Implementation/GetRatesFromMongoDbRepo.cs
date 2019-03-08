@@ -14,7 +14,10 @@ namespace VATToolBoxApiApp.Repository.Implementation
         {
 
 
-            const string connectionString = @"mongodb://vatdb:xEsrRuBN5duupDWV6L0f3tTGPKSmNvOcepkNqnGAGypWOikSYbOKlKyGMus2TLxW4poosuDBlUMr15w86qUA6Q==@vatdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb";
+            // const string connectionString = @"mongodb://vatdb:xEsrRuBN5duupDWV6L0f3tTGPKSmNvOcepkNqnGAGypWOikSYbOKlKyGMus2TLxW4poosuDBlUMr15w86qUA6Q==@vatdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb";
+            const string connectionString =
+                @"mongodb://logiondb:GdGcQ0ZDoV3KuW3wmfdJwAt1zwiKW0D3WLxwVOwXAvzrgKrNQZ8qDIDMUBSBTiRjzzLz4jgoKqYxhZ5m51bx2Q==@logiondb.documents.azure.com:10250/?ssl=true&sslverifycertificate=false";
+
             var settings = MongoClientSettings.FromUrl(
               new MongoUrl(connectionString)
             );
